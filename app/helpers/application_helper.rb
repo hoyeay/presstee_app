@@ -9,4 +9,9 @@ module ApplicationHelper
       base_title + ' | ' + page_title
     end
   end
+  
+  # Add active class to current web page
+  def is_active?(link_path)
+    current_page?(link_path) ? "active" : ""
+  end
 end
