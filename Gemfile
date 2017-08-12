@@ -42,6 +42,9 @@ gem 'sprockets-rails', '~> 3.0', '>= 3.0.4'
 # Slim template html
 gem 'slim', '~> 3.0', '>= 3.0.6'
 
+# Toastr-styled Notifications
+gem 'toastr-rails'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platform: :mri

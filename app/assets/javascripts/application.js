@@ -12,6 +12,7 @@
 //
 //= require jquery
 //= require jquery_ujs
+// = require toastr
 //= require turbolinks
 //= require popper
 //= require bootstrap-sprockets
@@ -20,4 +21,19 @@
 // https://stackoverflow.com/questions/22383547/bootstrap-dropdown-menu-is-not-working
 $(document).ready(function() {
     $(".dropdown-toggle").dropdown();
+});
+
+toastr.options = ({
+“closeButton”: true,
+“debug”: false,
+“positionClass”: “toast-bottom-right”,
+“onclick”: null,
+“showDuration”: “300”,
+“hideDuration”: “1500”,
+“timeOut”: “5000”,
+“extendedTimeOut”: “1000”,
+“showEasing”: “swing”,
+“hideEasing”: “linear”,
+“showMethod”: “fadeIn”,
+“hideMethod”: “fadeOut”
 });
