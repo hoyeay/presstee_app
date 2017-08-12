@@ -45,6 +45,8 @@ gem 'slim', '~> 3.0', '>= 3.0.6'
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platform: :mri
+  # show colors during rails test
+  gem 'minitest-reporters', '1.1.14'
 end
 
 group :development do
