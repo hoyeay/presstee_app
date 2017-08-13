@@ -45,6 +45,9 @@ gem 'slim', '~> 3.0', '>= 3.0.6'
 # Toastr-styled Notifications
 gem 'toastr-rails'
 
+# user authentication
+gem 'devise'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platform: :mri
