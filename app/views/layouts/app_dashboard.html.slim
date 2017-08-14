@@ -1,0 +1,63 @@
+doctype html
+html
+  head
+    meta[charset="utf-8"]
+    meta[name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"]
+    title
+      = full_title(yield(:title))
+    = csrf_meta_tags
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
+    = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
+    = custom_flash_messages
+  body.dashboard-body
+    nav.navbar.navbar-expand-md.navbar-dark.fixed-top.bg-dark
+      a.navbar-brand[href="/app"]
+        | Presstee
+      button.navbar-toggler.d-lg-none.collapsed[type="button" data-toggle="collapse" data-target="#navbarsCo" aria-controls="navbarsCo" aria-expanded="true" aria-label="Toggle navigation"]
+        span.navbar-toggler-icon
+      #navbarsCo.navbar-collapse.collapse[style=""]
+        ul.nav.navbar-nav.mr-auto
+          li.nav-item[class="#{is_active?(app_path)}"]
+            a.nav-link[href='/app']
+              | Home 
+              span.sr-only
+                | (current)
+          li.nav-item[class="#{is_active?(app_profile_path)}"]
+            a.nav-link[href='/app/profile']
+              | Profile
+          li.nav-item[class="#{is_active?(app_settings_path)}"]
+            a.nav-link[href='/app/settings']
+              | Settings
+          li.nav-item[class="#{is_active?(app_help_path)}"]
+            a.nav-link[href='/app/help']
+              | Help
+    .container-fluid
+      .row
+        nav.col-sm-3.col-md-2.d-none.d-sm-block.bg-light.sidebar
+          ul.nav.flex-column
+            li.nav-item
+              a.nav-link.active[href='']
+                | Summary
+            li.nav-item
+              a.nav-link[href='']
+                | Mutual Pools
+            li.nav-item
+              a.nav-link[href='']
+                | Friends
+            li.nav-item
+              a.nav-link[href='']
+                | Stats
+            li.nav-item
+              a.nav-link[href='']
+                | Messages
+            li.nav-item
+              a.nav-link[href='']
+                | Documents
+        main.col-sm-9.ml-sm-auto.col-md-10.pt-3[role='main']
+          .card.card-body
+            | Message of the Day: All data subject to deletion.
+          = yield
+      = render 'layouts/flash_message'
+    script[src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"]
+    script[src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"]
+    script[src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"]

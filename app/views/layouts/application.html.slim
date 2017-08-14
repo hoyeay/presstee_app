@@ -22,26 +22,20 @@ html
                 | Home 
                 span.sr-only
                   | (current)
-            li.nav-item[class="#{is_active?('/features')}"]
-              a.nav-link[href="/features"]
+            li.nav-item[class="#{is_active?(features_path)}"]
+              a.nav-link[href='/features']
                 | Features
-            li.nav-item[class="#{is_active?('/about')}"]
-              a.nav-link[href="/about"]
+            li.nav-item[class="#{is_active?(about_path)}"]
+              a.nav-link[href='/about']
                 | About
-            li.nav-item[class="#{is_active?('/contact')}"]
-              a.nav-link[href="/contact"]
+            li.nav-item[class="#{is_active?(contact_path)}"]
+              a.nav-link[href='/contact']
                 | Contact
             - if current_user.try(:superadmin_role?)
               = link_to('Admin', rails_admin_path, class: 'nav-link')
             - if current_user.try(:prolender_role?) or current_user.try(:basiclender_role?) or current_user.try(:borrower_role?)
-              = link_to('App', app_dashboard_home_path, class: 'nav-link')
+              = link_to('App', app_path, class: 'nav-link')
             - if current_user.try(:prolender_role?) or current_user.try(:basiclender_role?) or current_user.try(:borrower_role?)
-              li.nav-item.dropdown
-                a#navbarDropdownMenuLink.nav-link.dropdown-toggle[href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"]
-                  |  Settings
-                .dropdown-menu[aria-labelledby="navbarDropdownMenuLink"]
-                  = link_to('Edit Registration', edit_user_registration_path, class: 'dropdown-item')
-                  = link_to('Logout', destroy_user_session_path, :method => :delete, class: 'dropdown-item')
             - if !user_signed_in?
               li.nav-item
                 = link_to('Register', new_user_registration_path, class: 'nav-link')

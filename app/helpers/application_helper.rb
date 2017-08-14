@@ -10,9 +10,9 @@ module ApplicationHelper
     end
   end
   
-  # Add active class to current web page
+  # Add "active" class to current web page
   def is_active?(link_path)
-    current_page?(link_path) ? "active" : ""
+    current_page?(link_path) ? 'active': ''
   end
   
   # Custom bootstrap flash messages with toastr

@@ -1,0 +1,8 @@
+br
+h1 Settings
+.card.card-body
+  | Please complete the following to finalize your account:
+  
+br
+= link_to('Edit Registration', edit_user_registration_path, class: 'btn btn-primary')
+= link_to('Logout', destroy_user_session_path, :method => :delete, class: 'btn btn-success')
