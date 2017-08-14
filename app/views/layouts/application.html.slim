@@ -10,48 +10,43 @@ html
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
     = custom_flash_messages
   body
-    nav.navbar.navbar-expand-lg.navbar-dark.bg-dark
-      a.navbar-brand[href="#"]
-        | Presstee
-      button.navbar-toggler[type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation"]
-        span.navbar-toggler-icon
-      #navbarNavDropdown.collapse.navbar-collapse
-        ul.navbar-nav.mr-auto
-          li.nav-item[class="#{is_active?(root_path)}"]
-            a.nav-link[href="/"]
-              | Home 
-              span.sr-only
-                | (current)
-          li.nav-item[class="#{is_active?('/features')}"]
-            a.nav-link[href="/features"]
-              | Features
-          li.nav-item[class="#{is_active?('/about')}"]
-            a.nav-link[href="/about"]
-              | About
-          li.nav-item[class="#{is_active?('/contact')}"]
-            a.nav-link[href="/contact"]
-              | Contact
-          li.nav-item.dropdown
-            a#navbarDropdownMenuLink.nav-link.dropdown-toggle[href="http://example.com" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"]
-              |  Dropdown link 
-            .dropdown-menu[aria-labelledby="navbarDropdownMenuLink"]
-              a.dropdown-item[href="#"]
-                | Action
-              a.dropdown-item[href="#"]
-                | Another action
-              a.dropdown-item[href="#"]
-                | Something else here
-        ul.navbar-nav.ml-auto
-          - if user_signed_in?
-            li.nav-item
-              = link_to('Edit Registration', edit_user_registration_path, class: 'nav-link')
-            li.nav-item
-              = link_to('Logout', destroy_user_session_path, :method => :delete, class: 'nav-link')
-          - else
-            li.nav-item
-              = link_to('Register', new_user_registration_path, class: 'nav-link')
-            li.nav-item
-              = link_to('Login', new_user_session_path, class: 'nav-link')
+    header
+      nav.navbar.navbar-expand-lg.navbar-dark.bg-dark.flex-column.flex-md-row.sticky-top
+        = link_to('Presste', root_path, class: 'navbar-brand')
+        button.navbar-toggler[type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation"]
+          span.navbar-toggler-icon
+        #navbarNavDropdown.collapse.navbar-collapse
+          ul.navbar-nav
+            li.nav-item[class="#{is_active?(root_path)}"]
+              a.nav-link[href="/"]
+                | Home 
+                span.sr-only
+                  | (current)
+            li.nav-item[class="#{is_active?('/features')}"]
+              a.nav-link[href="/features"]
+                | Features
+            li.nav-item[class="#{is_active?('/about')}"]
+              a.nav-link[href="/about"]
+                | About
+            li.nav-item[class="#{is_active?('/contact')}"]
+              a.nav-link[href="/contact"]
+                | Contact
+            - if current_user.try(:superadmin_role?)
+              = link_to('Admin', rails_admin_path, class: 'nav-link')
+            - if current_user.try(:prolender_role?) or current_user.try(:basiclender_role?) or current_user.try(:borrower_role?)
+              = link_to('App', app_dashboard_home_path, class: 'nav-link')
+            - if current_user.try(:prolender_role?) or current_user.try(:basiclender_role?) or current_user.try(:borrower_role?)
+              li.nav-item.dropdown
+                a#navbarDropdownMenuLink.nav-link.dropdown-toggle[href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"]
+                  |  Settings
+                .dropdown-menu[aria-labelledby="navbarDropdownMenuLink"]
+                  = link_to('Edit Registration', edit_user_registration_path, class: 'dropdown-item')
+                  = link_to('Logout', destroy_user_session_path, :method => :delete, class: 'dropdown-item')
+            - if !user_signed_in?
+              li.nav-item
+                = link_to('Register', new_user_registration_path, class: 'nav-link')
+              li.nav-item
+                = link_to('Login', new_user_session_path, class: 'nav-link')
     .container-fluid
       = render 'layouts/flash_message'
       = yield

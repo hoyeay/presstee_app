@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="dataSourceStorageLocal">
+    <data-source name="Rails presstee_app: development" uuid="6a985cb8-923a-494f-9a42-714a08934823">
+      <database-info product="PostgreSQL" version="9.6.3" jdbc-version="4.0" driver-name="PostgreSQL Native Driver" driver-version="PostgreSQL 9.4 JDBC4 (build 1201)">
+        <identifier-quote-string>&quot;</identifier-quote-string>
+      </database-info>
+      <case-sensitivity plain-identifiers="lower" quoted-identifiers="exact" />
+      <introspection-schemas>presstee_app_development:public</introspection-schemas>
+    </data-source>
+    <data-source name="Rails presstee_app: production" uuid="c61c3aae-19c0-4d7c-90d9-15a3392134bc">
+      <database-info product="" version="" jdbc-version="" driver-name="" driver-version="" />
+      <first-sync>true</first-sync>
+      <user-name>presstee_app</user-name>
+    </data-source>
+    <data-source name="Rails presstee_app: test" uuid="528b51fa-149e-4a5d-88e1-b155a060cb77">
+      <database-info product="PostgreSQL" version="9.6.3" jdbc-version="4.0" driver-name="PostgreSQL Native Driver" driver-version="PostgreSQL 9.4 JDBC4 (build 1201)">
+        <identifier-quote-string>&quot;</identifier-quote-string>
+      </database-info>
+      <case-sensitivity plain-identifiers="lower" quoted-identifiers="exact" />
+      <introspection-schemas>presstee_app_test:public</introspection-schemas>
+    </data-source>
+  </component>
+</project>

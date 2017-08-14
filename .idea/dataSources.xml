@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
+    <data-source source="LOCAL" name="Rails presstee_app: development" uuid="6a985cb8-923a-494f-9a42-714a08934823">
+      <driver-ref>postgresql</driver-ref>
+      <synchronize>true</synchronize>
+      <imported>true</imported>
+      <remarks>$PROJECT_DIR$/config/database.yml</remarks>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql:presstee_app_development</jdbc-url>
+    </data-source>
+    <data-source source="LOCAL" name="Rails presstee_app: production" uuid="c61c3aae-19c0-4d7c-90d9-15a3392134bc">
+      <driver-ref>postgresql</driver-ref>
+      <synchronize>true</synchronize>
+      <imported>true</imported>
+      <remarks>$PROJECT_DIR$/config/database.yml</remarks>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql:presstee_app_production</jdbc-url>
+    </data-source>
+    <data-source source="LOCAL" name="Rails presstee_app: test" uuid="528b51fa-149e-4a5d-88e1-b155a060cb77">
+      <driver-ref>postgresql</driver-ref>
+      <synchronize>true</synchronize>
+      <imported>true</imported>
+      <remarks>$PROJECT_DIR$/config/database.yml</remarks>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql:presstee_app_test</jdbc-url>
+    </data-source>
+  </component>
+</project>
